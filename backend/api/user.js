@@ -29,7 +29,7 @@ module.exports = app => {
             return res.status(400).send(msg)
         }
 
-        user.password = encryptPassword(req.password)
+        user.password = encryptPassword(user.password) // --> cuidado aqui, se digitar errado o programa não funciona direito
         delete user.confirmPassword
         /* o trecho a baixo  é para atualizar os dados com o put*/
         if (user.id) {
