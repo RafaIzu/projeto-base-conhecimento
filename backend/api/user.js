@@ -13,6 +13,9 @@ module.exports = app => {
         const user = { ...req.body }
         if (req.params.id) user.id = req.params.id
 
+        if(!req.originalUrl.startsWith('/users')) user.admin = false // garante que no signUp ele nao cadestre qualquer um como admin
+        if(!req.user || !req.user.admin) user.admin = false // garante que no signUp ele nao cadestre qualquer um como admin
+
         try {
             existsOrError(user.name, 'Nome não informado')
             existsOrError(user.email, 'E-mail não infomrado')
