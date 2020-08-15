@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-      <span>Copyright <strong>Rafael Izukawa</strong> © 2020 </span>
+        <span>Copyright <strong>Capsule Corp.</strong> © 2020 </span>
   </footer>
 </template>
 
