@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 
 // Temporario!
 
-require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IlJhZmFlbCIsImVtYWlsIjoicmFmYUBnbWFpbC5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTk3NTIyMTk1LCJleHAiOjE1OTc3ODEzOTV9.f1uh1u30mS875xFEUyBgYSCLMuPn9pL8Hyv6EgjrzuE'
+require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IlJhZmFlbCIsImVtYWlsIjoicmFmYUBnbWFpbC5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTk4MjE2MTYzLCJleHAiOjE1OTg0NzUzNjN9.twMGwa8hm93T3CNuSfFUe2sm0DsfdqUgIwqPE8Z9U7Q'
 
 new Vue({
   store,

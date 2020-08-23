@@ -26,7 +26,7 @@ import CategoryAdmin from "./CategoryAdmin";
 import UserAdmin from "./UserAdmin";
 export default {
   name: "AdminPages",
-  components: { PageTitle, ArticleAdmin, CategoryAdmin, UserAdmin },
+  components: { PageTitle, ArticleAdmin, CategoryAdmin, UserAdmin }
 };
 </script>
 

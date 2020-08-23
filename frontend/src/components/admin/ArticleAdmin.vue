@@ -42,12 +42,14 @@
         </b-form>
         <hr>
         <b-table hover striped :items="articles" :fields="fields">
-			<b-button variant="warning" @click="loadArticle(data.item)" class="mr-2">
-				<i class="fa fa-pencil"></i>
-			</b-button>
-			<b-button variant="danger" @click="loadArticle(data.item, 'remove')">
-				<i class="fa fa-trash"></i>
-			</b-button>
+            <template slot="cell(actions)" slot-scope="data">
+                <b-button variant="warning" @click="loadArticle(data.item)" class="mr-2">
+                    <i class="fa fa-pencil"></i>
+                </b-button>
+                <b-button variant="danger" @click="loadArticle(data.item, 'remove')">
+                    <i class="fa fa-trash"></i>
+                </b-button>
+            </template>
         </b-table>
     </div>
 </template>
