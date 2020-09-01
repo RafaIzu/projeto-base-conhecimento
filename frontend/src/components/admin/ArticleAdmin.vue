@@ -14,7 +14,8 @@
                     :readonly="mode === 'remove'"
 					placeholder='Informe o Nome do artigo...'  />
             </b-form-group>
-			<b-form-group label="Imagem (URL):" label-for="article-imageUrl">
+			<b-form-group v-if="mode === 'save'" label="Imagem (URL):"
+				label-for="article-imageUrl">
                 <b-form-input id="article-imageUrl" type="text"
 					v-model="article.imageUrl" required
                     :readonly="mode === 'remove'"
@@ -51,6 +52,7 @@
                 </b-button>
             </template>
         </b-table>
+		<b-pagination size="md" v-model="page" :total-rows="count" :per-page="limit"></b-pagination>
     </div>
 </template>
 
@@ -82,7 +84,7 @@ export default {
 	},
 	methods: {
 		loadArticles() {
-			const url = `${baseApiUrl}/articles`
+			const url = `${baseApiUrl}/articles?page=${this.page}`
 			axios.get(url).then(res => {
 				this.articles = res.data.data
 				this.count = res.data.count
@@ -137,6 +139,11 @@ export default {
 		}
 
 
+	},
+	watch: {
+		page() {
+			this.loadArticles()
+		}
 	},
 	mounted(){
 		this.loadArticles()

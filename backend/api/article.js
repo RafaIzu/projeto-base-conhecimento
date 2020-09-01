@@ -31,23 +31,23 @@ module.exports = app =>{
         }
     }
 
-    const remove = async(req, res) =>{
-        try{
+    const remove = async(req, res) => {
+        try {
             const rowsDeleted = await app.db('articles')
                 .where({ id: req.params.id }).del()
-            try{
+            try {
                 existsOrError(rowsDeleted, 'Artigo não foi encontrado.')
-            }catch(msg){
+            } catch(msg){
                 return res.status(400).send(msg)
             }
             
             res.status(204).send()
-        }catch(msg){
+        } catch(msg){
             res.status(500).send(msg)
         }
     }
     
-    const limit = 10 //usado para paginação
+    const limit = 3 //usado para paginação
     const get = async(req, res) => {
         const page = req.query.page || 1
 
