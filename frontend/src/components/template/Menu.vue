@@ -56,6 +56,7 @@ export default {
 </script>
 
 <style>
+
 .menu {
   grid-area: menu;
   background: linear-gradient(to right, #232526, #414345);
@@ -64,13 +65,24 @@ export default {
   flex-wrap: wrap;
 }
 
-.tree-anchor {
-  color: #fff;
+.menu span,
+.menu span:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
-.menu .tree-node.selected > .tree-content,
-.menu .tree-node .tree-content:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.menu .tree-node:not(.selected) > .tree-content:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+     
+}
+ 
+.menu .tree-node.selected > .tree-content {
+    background-color: rgba(0, 0, 0, 0.2);
+    
+}
+
+.menu .tree-node.selected > .tree-content > .tree-anchor{
+  color: #fff;
 }
 
 .tree-arrow.has-child {
